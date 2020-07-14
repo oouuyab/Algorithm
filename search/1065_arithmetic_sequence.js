@@ -57,5 +57,61 @@ rl.on("line", function (line) {
     }
   }
   console.log(count);
+  // console.time("???");
+  // let target = parseInt(input[0]);
+  // let count = 0;
+  // if (input[0] < 100) {
+  //   count += target;
+  // } else {
+  //   count = 99;
+  //   let [limit, num] = find_limit_and_num(target);
+  //   for (let num_index = 3; num_index <= num; num_index++) {
+  //     if (num_index !== num) {
+  //       for (let i = 1; i < 10; i++) {
+  //         count += find_hansu(i * Math.pow(10, num_index - 1));
+  //       }
+  //     } else {
+  //       for (let i = 1; i < limit; i++) {
+  //         count += find_hansu(i * Math.pow(10, num_index - 1));
+  //       }
+  //     }
+  //     for (let left = Math.pow(10, num - 1) * limit; left <= target; left++) {
+  //       let splited_target = get_splited_target(left);
+  //       let commonDifference = splited_target[0] - splited_target[1];
+  //       for (let innerI = 1; innerI < splited_target.length - 1; innerI++) {
+  //         if (splited_target[innerI] - splited_target[innerI + 1] !== commonDifference) break;
+  //         if (innerI === splited_target.length - 2) count++;
+  //       }
+  //     }
+  //   }
+  // }
+  // console.log(count);
+  // console.timeEnd("???");
   process.exit();
 });
+
+// let find_limit_and_num = (target) => {
+//   let splited_target = get_splited_target(target);
+//   let num = splited_target.length;
+//   let limit = splited_target[0];
+//   return [limit, num];
+// };
+
+// let get_splited_target = (target) =>
+//   target
+//     .toString()
+//     .split("")
+//     .map((el) => parseInt(el));
+
+// let find_hansu = (target) => {
+//   let splited_target = get_splited_target(target);
+//   let num = splited_target.length;
+//   let first_num = splited_target[0];
+//   let possible_common_difference = find_possible_common_difference(first_num, num); //* 가능한 공차
+//   return possible_common_difference;
+// };
+// let find_possible_common_difference = (first_num, num) => {
+//   let possitive_possible_common_difference = Math.floor((9 - first_num) / (num - 1));
+//   let negative_possible_common_difference = Math.floor(first_num / (num - 1)) * -1;
+//   return possitive_possible_common_difference - negative_possible_common_difference + 1;
+// };
