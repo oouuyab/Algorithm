@@ -57,6 +57,6 @@ let deleteTarget = (doc, target) => {
     let newDoc = doc.replace(newTarget, "");
     console.log(`newDoc: ${newDoc}`);
     count++;
-    if (newDoc.indexOf(target) > -1) deleteTarget(newDoc, target);
+    deleteTarget(newDoc, target);
   }
 };
