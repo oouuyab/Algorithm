@@ -26,21 +26,18 @@ Could you do it in O(n) time and O(1) space?
  * @param {ListNode} head
  * @return {boolean}
  */
-var isPalindrome = function(head) {
-    let currentNode = head
-    
-    if(currentNode){
-    let arr = [currentNode.val]
-    while(currentNode.next !== null){
-        currentNode = currentNode.next
-        arr.push(currentNode.val)
+var isPalindrome = function (head) {
+  let currentNode = head;
+
+  let arr = [];
+  while (currentNode) {
+    arr.push(currentNode.val);
+    currentNode = currentNode.next;
+  }
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    if (arr[i] !== arr[arr.length - 1 - i]) {
+      return false;
     }
-    for(let i = 0 ; i < arr.length ; i++){
-        if(arr[i] !== arr[arr.length-1-i]){
-            return false;
-            break;
-        }
-    }
-    }
-        return true
+  }
+  return true;
 };
