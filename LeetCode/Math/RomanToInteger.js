@@ -52,30 +52,30 @@ Explanation: M = 1000, CM = 900, XC = 90 and IV = 4.
  */
 var romanToInt = function (s) {
   //* version 1
-  // let convertCharToNum = (char) =>{
-  //     if(char === 'M') return 1000
-  //     if(char === 'D') return 500
-  //     if(char === 'C') return 100
-  //     if(char === 'L') return 50
-  //     if(char === 'X') return 10
-  //     if(char === 'V') return 5
-  //     if(char === 'I') return 1
-  // }
-  // let string = s.split('')
-
-  // let positive = 0
-  // let negative = 0
-
-  // for(let i = 0 ; i < string.length ; i++){
-  //   let currentNum = convertCharToNum(string[i])
-  //   let nextNum = convertCharToNum(string[i+1])
-  //   if(currentNum < nextNum){
-  //       negative += currentNum
-  //   }else{
-  //       positive += currentNum
-  //   }
+  // let convertCharToNum = (char) => {
+  //   if (char === "M") return 1000;
+  //   if (char === "D") return 500;
+  //   if (char === "C") return 100;
+  //   if (char === "L") return 50;
+  //   if (char === "X") return 10;
+  //   if (char === "V") return 5;
+  //   if (char === "I") return 1;
   // };
-  // return positive - negative
+  // let string = s.split("");
+
+  // let positive = 0;
+  // let negative = 0;
+
+  // for (let i = 0; i < string.length; i++) {
+  //   let currentNum = convertCharToNum(string[i]);
+  //   let nextNum = convertCharToNum(string[i + 1]);
+  //   if (currentNum < nextNum) {
+  //     negative += currentNum;
+  //   } else {
+  //     positive += currentNum;
+  //   }
+  // }
+  // return positive - negative;
 
   //* version 2
   let charToNum = {
@@ -90,8 +90,8 @@ var romanToInt = function (s) {
 
   let value = 0;
 
-  for (let i = 0; i < string.length; i++) {
-    if (charToNum[s[i]] < charToNum[s[i]]) {
+  for (let i = 0; i < s.length; i++) {
+    if (charToNum[s[i]] < charToNum[s[i + 1]]) {
       value -= charToNum[s[i]];
     } else {
       value += charToNum[s[i]];
