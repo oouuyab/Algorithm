@@ -25,12 +25,17 @@ var singleNumber = function (nums) {
   //   //* version 1
   //   //! Runtime: 560 ms
   //   //! Memory Usage: 38.2 MB
+  //   //? 시간 복잡도 O(n^2)
+
   //   for (let el of nums) {
   //     if (nums.indexOf(el) === nums.lastIndexOf(el)) return el;
   //   }
+
   //* version 2
   //! Runtime: 80 ms
   //! Memory Usage: 40.7 MB
+  //? 시간 복잡도 O(n)
+
   let countObj = {};
   for (let i = 0; i < nums.length; i++) {
     if (!countObj[nums[i]]) countObj[nums[i]] = 1;
