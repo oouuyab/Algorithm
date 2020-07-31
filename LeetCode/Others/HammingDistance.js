@@ -28,34 +28,30 @@ The above arrows point to positions where the corresponding bits are different.
  * @return {number}
  */
 var hammingDistance = function (x, y) {
-  //     let binaryX = x.toString(2)
-  //     let binaryY = y.toString(2)
+  //* 처음 접근
+  //   let binaryX = x.toString(2); //10000
+  //   let binaryY = y.toString(2); //01111
 
-  //     while(binaryX.length !== binaryY.length){
-  //         if(binaryX.length < binaryY.length){
-  //             binaryX = '0' + binaryX;
-  //         }else{
-  //             binaryY = '0' + binaryY;
-  //         };
-  //     };
+  //   while (binaryX.length !== binaryY.length) {
+  //     binaryX.length < binaryY.length ? (binaryX = "0" + binaryX) : (binaryY = "0" + binaryY);
+  //   }
 
-  //     let distance = 0;
+  //   let distance = 0;
 
-  //     for(let i = 0 ; i < binaryX.length ; i++){
-  //         console.log(binaryX[i], binaryY[i]);
-  //         if(binaryX[i] !== binaryY[i]) distance++;
-  //     }
+  //   for (let i = 0; i < binaryX.length; i++) {
+  //     if (binaryX[i] !== binaryY[i]) distance++;
+  //   }
 
-  //     return distance;
+  //   return distance;
 
+  //* 비트연산자
   let distance = x ^ y; //X XOR Y 0101
   let count = 0;
   while (distance !== 0) {
-    console.log(distance & 1);
     if (distance & 1) {
       count++;
     }
-    distance = distance >> 1; //0010 // 0000
+    distance = distance >> 1; //0101 => 0010 => 0000
   }
 
   return count;

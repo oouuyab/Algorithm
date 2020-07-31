@@ -18,6 +18,15 @@ Output:
  [1,4,6,4,1]
 ]
 
+[
+ [1], index : 0, value : 1
+ [1,1], index : 1, value : [1,1]
+ [1,2,1], index : 2, value : [1,,1]
+ [1,3,3,1], index : 3, value : [1,index([]), index, 1]
+ [1,4,6,4,1], index : 4, value : [1,index,,index,1]
+ [1,5,10,10,5,1]
+]
+
  */
 
 /**
