@@ -24,29 +24,30 @@ Output: false
  * @return {boolean}
  */
 var increasingTriplet = function (nums) {
+    for (let i = 0; i < nums.length - 2; i++) {
+        for (let j = i + 1; j < nums.length - 1; j++) {
+            if (nums[i] >= nums[j]) {
+                break;
+            } else {
+                for (let k = j + 1; k < nums.length; k++) {
+                    if (nums[j] < nums[k]) return true;
+                }
+            }
+        }
+    }
+    return false;
+
     // let result = false;
-    // for (let i = 0; i < nums.length - 2; i++) {
-    //     for (let j = i + 1; j < nums.length - 1; j++) {
-    //         if (nums[i] >= nums[j]) break;
-    //         else {
-    //             for (let k = j + 1; k < nums.length; k++) {
-    //                 if (nums[j] < nums[k]) result = true;
-    //             }
-    //         }
-    //     }
+    // if (nums.length < 3) return false;
+
+    // let smallNum1 = Number.MAX_SAFE_INTEGER; // 9007199254740991
+    // let smallNum2 = Number.MAX_SAFE_INTEGER;
+
+    // for (let i = 0; i < nums.length; i++) {
+    //     if (nums[i] <= smallNum1) smallNum1 = nums[i];
+    //     else if (nums[i] <= smallNum2) smallNum2 = nums[i];
+    //     else result = true;
     // }
 
-    let result = false;
-
-    let smallNum1 = Number.MAX_SAFE_INTEGER; // 9007199254740991
-    let smallNum2 = Number.MAX_SAFE_INTEGER;
-
-    for (let i = 0; i < nums.length; i++) {
-        if (nums[i] <= smallNum1) smallNum1 = nums[i];
-        else if (nums[i] <= smallNum2) smallNum2 = nums[i];
-        else result = true;
-        console.log(smallNum1, smallNum2, nums[i], result);
-    }
-
-    return result;
+    // return result;
 };
