@@ -60,52 +60,52 @@ var isValidSudoku = function (board) {
   //가로
   for (let i = 0; i < board.length; i++) {
     if (isUnique(board[i]) === false) {
-      return false
+      return false;
     }
   }
   //세로
   for (let j = 0; j < board[0].length; j++) {
-    let col = []
+    let col = [];
     for (let i = 0; i < board.length; i++) {
-      col.push(board[i][j])
+      col.push(board[i][j]);
     }
     if (isUnique(col) === false) {
-      return false
+      return false;
     }
   }
   //9칸
-  let startI = [0, 3, 6]
-  let startJ = [0, 3, 6]
+  let startI = [0, 3, 6];
+  let startJ = [0, 3, 6];
   for (let startIIdx = 0; startIIdx < startI.length; startIIdx++) {
     for (let startJIdx = 0; startJIdx < startJ.length; startJIdx++) {
-      let num9 = []
+      let num9 = [];
       for (let i = 0; i < 3; i++) {
         for (let j = 0; j < 3; j++) {
-          num9.push(board[startI[startIIdx] + i][startJ[startJIdx] + j])
+          num9.push(board[startI[startIIdx] + i][startJ[startJIdx] + j]);
         }
       }
       if (isUnique(num9) === false) {
-        return false
+        return false;
       }
     }
   }
-  return true
-}
+  return true;
+};
 
 let isUnique = (arr) => {
-  let obj = {}
+  let obj = {};
   for (let el of arr) {
     if (el === '.') {
-      continue
+      continue;
     }
     if (el in obj) {
-      return false
+      return false;
     } else {
-      obj[el] = 1
+      obj[el] = 1;
     }
   }
-  return true
-}
+  return true;
+};
 
 // /**
 //  * @param {character[][]} board
